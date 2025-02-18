@@ -1,2 +1,2 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_ip_visitor_tracking_info,access_ip_visitor_tracking_info,model_ip_visitor_tracking_info,base.group_user,1,1,1,1
+access_visitor_tracking,access_visitor_tracking,model_visitor_tracking,base.group_user,1,1,1,1

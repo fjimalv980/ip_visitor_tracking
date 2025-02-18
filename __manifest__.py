@@ -1,17 +1,17 @@
 {
-    'name': 'IP VISITOR TRACKING',
+    'name': 'IP Visitor Tracking',
     'version': '1.0',
-    'summary': 'Integración con la API de IPGeolocation',
-    'description': 'Obtención de geolocalización en tiempo real.',
+    'summary': 'Módulo para rastrear la geolocalización de los visitantes del sitio web.',
+    'description': 'Este módulo utiliza la API de ipgeolocation.io para obtener información de geolocalización de los visitantes.',
     'author': 'Francisco Jiménez',
     'category': 'Website',
-    'depends': ['base'],
+    'depends': ['base', 'website'],
     'data': [
         'security/ir.model.access.csv',
-        'views/ip_visitor_tracking_views.xml',
+        'views/visitor_tracking_view.xml',
     ],
     'installable': True,
     'application': True,
     'license': 'LGPL-3',
-    'icon': ['/ip_visitor_tracking/static/description/icon58.png'],
+    'icon': '/ip_visitor_tracking/static/description/icon.png',
 }

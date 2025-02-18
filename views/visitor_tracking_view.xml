@@ -1,0 +1,58 @@
+<odoo>
+    <!-- Vista formulario para visitor.tracking -->
+    <record id="view_visitor_tracking_form" model="ir.ui.view">
+        <field name="name">visitor.tracking.form</field>
+        <field name="model">visitor.tracking</field>
+        <field name="arch" type="xml">
+            <form string="Visitor Tracking Information">
+                <sheet>
+                    <group>
+                        <field name="ip_address"/>
+                        <field name="api_key"/>
+                    </group>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="get_geolocation_data" type="object" string="Obtener Geolocalización"
+                            class="oe_stat_button"/>
+                    </div>
+                    <group>
+                        <field name="country" readonly="1"/>
+                        <field name="city" readonly="1"/>
+                        <field name="longitude" readonly="1"/>
+                        <field name="latitude" readonly="1"/>
+                        <field name="isp" readonly="1"/>
+                        <field name="organization" readonly="1"/>
+                        <field name="visit_time" readonly="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Vista árbol para visitor.tracking -->
+    <record id="view_visitor_tracking_tree" model="ir.ui.view">
+        <field name="name">visitor.tracking.tree</field>
+        <field name="model">visitor.tracking</field>
+        <field name="arch" type="xml">
+            <tree string="Visitor Tracking Information">
+                <field name="ip_address"/>
+                <field name="country"/>
+                <field name="city"/>
+                <field name="visit_time"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Acción ventana para visitor.tracking -->
+    <record id="action_visitor_tracking" model="ir.actions.act_window">
+        <field name="name">Visitor Tracking</field>
+        <field name="res_model">visitor.tracking</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menú raíz para Visitor Tracking -->
+    <menuitem id="menu_visitor_tracking_root" name="Visitor Tracking" sequence="10"/>
+
+    <!-- Menú secundario que referencia a la acción ventana -->
+    <menuitem id="menu_visitor_tracking_info" name="Visitor Tracking Info"
+        parent="menu_visitor_tracking_root" action="action_visitor_tracking"/>
+</odoo>
