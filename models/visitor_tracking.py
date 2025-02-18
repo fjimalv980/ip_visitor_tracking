@@ -35,6 +35,8 @@ class VisitorTracking(models.Model):
                     'organization': data.get('organization'),
                     'visit_time': fields.Datetime.now(),
                 })
+            elif response.status_code == 403:
+                _logger.error("Acceso prohibido a la API de geolocalización: %s", response.text)
             else:
                 raise UserError(f"Error al obtener los datos de geolocalización. Código de respuesta: {response.status_code}")
         except requests.exceptions.RequestException as e:
